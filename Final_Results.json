@@ -1,0 +1,50 @@
+{
+  "dataset": "CB513",
+  "task": "Protein secondary structure Q3 classification",
+  "mask_applied": true,
+  "training_samples": 180,
+  "testing_samples": 90,
+  "test_proteins_represented": 55,
+  "quantum": {
+    "qubits": 4,
+    "feature_map": "ZZFeatureMap",
+    "repetitions": 2,
+    "entanglement": "linear",
+    "pca_explained_variance": 0.365,
+    "best_C": 1,
+    "test_accuracy": 0.5,
+    "test_macro_f1": 0.4995,
+    "mean_protein_accuracy": 0.4639
+  },
+  "classical_4d": {
+    "best_C": 10,
+    "best_gamma": 10,
+    "test_accuracy": 0.4222,
+    "mean_protein_accuracy": 0.4239
+  },
+  "classical_25d": {
+    "best_C": 100,
+    "best_gamma": 0.01,
+    "test_accuracy": 0.5111,
+    "test_macro_f1": 0.508,
+    "mean_protein_accuracy": 0.533
+  },
+  "protein_bootstrap": {
+    "n_resamples": 10000,
+    "quantum_vs_classical_4d": {
+      "difference": 0.04,
+      "ci_95": [
+        -0.0973,
+        0.1773
+      ]
+    },
+    "quantum_vs_classical_25d": {
+      "difference": -0.0691,
+      "ci_95": [
+        -0.2409,
+        0.1036
+      ]
+    }
+  },
+  "conclusion": "The quantum kernel was competitive with classical RBF baselines, but no statistically established quantum predictive advantage was observed."
+}
